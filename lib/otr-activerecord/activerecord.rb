@@ -31,7 +31,7 @@ module OTR
 
     # Connect to database with a DB URL. Example: "postgres://user:pass@localhost/db"
     def self.configure_from_url!(url)
-      configure_from_hash! ::ActiveRecord::ConnectionAdapters::ConnectionSpecification::ConnectionUrlResolver.new(url).to_hash
+      configure_from_hash! ::ActiveRecord::DatabaseConfigurations::ConnectionUrlResolver.new(url).to_hash
     end
 
     # Connect to database with a yml file. Example: "config/database.yml"
